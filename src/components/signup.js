@@ -6,7 +6,7 @@ const Signup = (props) => {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [repassword, setRepassword] = useState('')
+    const [confirme, setConfirme] = useState('')
     const [emailError, setEmailError] = useState('')
     const [passwordError, setPasswordError] = useState('')
     const [error, setError] = useState('');
@@ -24,19 +24,21 @@ const Signup = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (password !== repassword) {
+        if (password !== confirme) {
             setError('Passwords do not match');
             return;
         }
 
         try {
-            const response = await axios.post('http://localhost/signup.php', {
+            const response = await axios.post('http://localhost/apiPhp/Register.php', {
                 username,
                 email,
                 password,
             });
 
             console.log(response.data); // Assuming backend returns success message
+            // alert("success");
+            navigate('/login');
         } catch (error) {
             setError('Signup failed. Please try again.'); // Update error state if signup fails
         }
@@ -48,7 +50,7 @@ const Signup = (props) => {
                 <div>Sign Up</div>
             </div>
             <br />
-            {/* <form onSubmit={handleSubmit}> */}
+            <form onSubmit={handleSubmit}>
                 <div className={'inputContainer'}>
                     <input
                         value={username}
@@ -84,9 +86,9 @@ const Signup = (props) => {
                 <br />
                 <div className={'inputContainer'}>
                     <input
-                        value={repassword}
+                        value={confirme}
                         placeholder="Enter your password again"
-                        onChange={(ev) => setRepassword(ev.target.value)}
+                        onChange={(ev) => setConfirme(ev.target.value)}
                         className={'inputBox'}
                         required
                     />
@@ -94,12 +96,12 @@ const Signup = (props) => {
                 </div>
                 <br />
                 <div className={'inputContainer'}>
-                    <input className={'inputButton'} type="button" onClick={onButtonClick} value={'Sign Up'} />
+                    <input className={'inputButton'} type="submit"  value={'Sign Up'} />
                 </div>
                 <div className={'textContainer'}>
                     Do you have already the account? <span className='registerLink' onClick={clickRegister}>Login</span>
                 </div>
-            {/* </form> */}
+            </form>
         </div>
     )
 }
