@@ -36,9 +36,18 @@ const Signup = (props) => {
                 password,
             });
 
-            console.log(response.data); // Assuming backend returns success message
-            // alert("success");
-            navigate('/login');
+            // console.log(response.data); // Assuming backend returns success message
+            // // alert("success");
+            // navigate('/login');
+            const {Code, Message} = response.data;
+            const code = response.data.Code;
+
+            console.log(code);
+
+            if(Code === 1){
+                navigate('/login');
+            }
+
         } catch (error) {
             setError('Signup failed. Please try again.'); // Update error state if signup fails
         }
