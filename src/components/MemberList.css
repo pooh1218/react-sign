@@ -1,0 +1,19 @@
+/* src/components/MemberList.css */
+.member-list {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.member-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.member-item p {
+    margin: 0;
+}

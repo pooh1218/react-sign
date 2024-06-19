@@ -1,0 +1,19 @@
+/* src/components/TaskCountdown.css */
+.task-countdown {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.task-countdown h2 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.task-countdown p {
+    margin: 0;
+    color: #666;
+}

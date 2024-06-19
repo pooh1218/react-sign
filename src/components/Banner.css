@@ -1,0 +1,10 @@
+/* src/components/Banner.css */
+.banner {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.banner img {
+    width: 100%;
+    border-radius: 8px;
+}

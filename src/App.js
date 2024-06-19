@@ -1,29 +1,28 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Home from './components/home'
-import Login from './components/login'
-import Signup from './components/signup'
-import Landing from './landing'
-
-
-import './App.css'
-import { useEffect, useState } from 'react'
+// src/App.js
+import React from 'react';
+import Header from './components/Header';
+import Banner from './components/Banner';
+import AppSection from './components/AppSection';
+import TaskCountdown from './components/TaskCountdown';
+import TaskHall from './components/TaskHall';
+import MemberList from './components/MemberList';
+import RegulatoryAuthority from './components/RegulatoryAuthority';
+import Footer from './components/Footer';
+import './App.css';
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false)
-  const [email, setEmail] = useState('')
-
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home email={email} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
-          <Route path="/login" element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
-          <Route path="/signup" element={<Signup setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
-          <Route path="/landing" element={<Landing setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
-        </Routes>
-      </BrowserRouter>
+      <Header />
+      <Banner />
+      <AppSection />
+      <TaskCountdown />
+      <TaskHall />
+      <MemberList />
+      <RegulatoryAuthority />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
