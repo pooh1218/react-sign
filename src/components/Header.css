@@ -1,17 +1,59 @@
 /* src/components/Header.css */
 .header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .header-left h1 {
-    margin: 0;
-  }
-  
-  .header-right button, .header-right select {
-    margin-left: 10px;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.header-center {
+  display: flex;
+}
+
+.header-center button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.header-center button:hover {
+  background-color: #0056b3;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.language-select {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.language-select:hover {
+  background-color: #e0e0e0;
+}
